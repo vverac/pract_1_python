@@ -1,0 +1,61 @@
+{% extends 'list.html' %}
+
+{% block columns %}
+<tr>
+    <th scope="col">Nro</th>
+    <th scope="col">Nombre</th>
+    <th scope="col">Opciones</th>
+</tr>
+{% endblock %}
+
+{% block rows %}
+{% for c in categories %}
+<tr>
+    <td>{{ c.id }}</td>
+    <td>{{ c.name }}</td>
+    <td>
+        <button type="button" class="btn btn-warning btn-xs btn-flat">
+            <i class="fas fa-edit"></i>
+        </button>
+        <button type="button" class="btn btn-danger btn-xs btn-flat">
+            <i class="fas fa-trash-alt"></i>
+        </button>
+    </td>
+</tr>
+{% endfor %}
+{% endblock %}
+
+
+{% block list_prod %}
+{% for c in categories %}
+<li class="item">
+    <div class="product-img">
+        <img src="dist/img/default-150x150.png" alt="Imagen del producto" class="img-size-50" />
+    </div>
+    <div class="product-info" style="margin-right: 200px;">
+        <a href="javascript:void(0)" class="product-title">
+            <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">
+                    <!-- Televisor samsung -->
+                    {{ c.name }}
+                </font>
+            </font>
+            <span class="badge badge-success float-right">
+                <font style="vertical-align: inherit">
+                    <font style="vertical-align: inherit"> $ {{ c.id }}</font>
+                </font>
+            </span>
+        </a>
+        <span class="product-description">
+            <font style="vertical-align: inherit">
+                <font style="vertical-align: inherit">
+                    <!-- Samsung 32" 1080p 60Hz LED Smart HDTV. -->
+                    {{ c.id }}
+                </font>
+            </font>
+        </span>
+    </div>
+</li>
+
+{% endfor %}
+{% endblock %}

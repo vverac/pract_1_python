@@ -1,0 +1,68 @@
+{% extends 'body.html' %} {% block content %}
+<div class="card card-default">
+  <div class="card-header">
+    <h3 class="card-title">
+      <i class="fas fa-search"></i>
+      {{ title }}
+    </h3>
+  </div>
+
+  <div class="card-body">
+    <table class="table">
+      <thead>
+        {% block columns %} {% endblock %}
+      </thead>
+      <tbody>
+        {% block rows %} {% endblock %}
+      </tbody>
+    </table>
+  </div>
+
+  <div class="card-footer">
+    <button class="btn btn-primary btn-flat">
+      <i class="fas fa-plus"></i> Nuevo registro
+    </button>
+  </div>
+</div>
+
+<div class="col-md-12">
+
+  <div class="card">
+    <div class="card-header">
+      <h3 class="card-title">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">Otra forma de listar Productos con imagenes y precios</font>
+        </font>
+      </h3>
+
+      <div class="card-tools">
+        <button type="button" class="btn btn-tool" data-card-widget="collapse">
+          <i class="fas fa-minus"></i>
+        </button>
+        <button type="button" class="btn btn-tool" data-card-widget="remove">
+          <i class="fas fa-times"></i>
+        </button>
+      </div>
+    </div>
+    <!-- /.card-header -->
+    <div class="card-body p-0">
+      <ul class="products-list product-list-in-card pl-2 pr-2">
+
+
+        {% block list_prod %}
+        {% endblock %}
+
+      </ul>
+    </div>
+    <!-- /.card-body -->
+    <div class="card-footer text-center">
+      <a href="javascript:void(0)" class="uppercase">
+        <font style="vertical-align: inherit">
+          <font style="vertical-align: inherit">Ver todos los productos</font>
+        </font>
+      </a>
+    </div>
+    <!-- /.card-footer -->
+  </div>
+  {% endblock %}
+</div>
